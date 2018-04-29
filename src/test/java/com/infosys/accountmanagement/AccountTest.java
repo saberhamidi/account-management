@@ -43,4 +43,19 @@ public class AccountTest {
         assertThat(testResultAccount.getId(), is(1l));
         assertThat(testResultAccount.getAccountNumber(), is("33321"));
     }
+
+    @Test
+    public void createAccountTest(){
+        Account testAccount = new Account();
+        testAccount.setId(1l);
+        testAccount.setAccountNumber("33321");
+        when(accountService.createAccount(testAccount)).thenReturn(testAccount);
+
+        Account testResultAccount = accountEndPoint.createAccount(testAccount);
+
+        verify(accountService).createAccount(testAccount);
+
+        assertThat(testResultAccount.getId(), is(1l));
+        assertThat(testResultAccount.getAccountNumber(), is("33321"));
+    }
 }
