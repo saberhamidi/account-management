@@ -1,0 +1,14 @@
+<div class="contianer">
+	<div class="row">
+		<div class="col-md-2"><h5>First Name</h5></div>
+		<div class="col-md-2"><h5>Last Name</h5></div>
+		<div class="col-md-2"><h5>Account Number</h5></div>
+	</div>
+	<div class="row" *ngFor="let account of accounts">
+		<div class="col-md-2">{{account.firstName}}</div>
+		<div class="col-md-2">{{account.lastName}}</div>
+		<div class="col-md-2">{{account.accountNumber}}</div>
+		<div class="col-md-2"><button type="button" class="btn btn-info btn-sm">Edit</button></div>
+		<div class="col-md-2"><button type="button" class="btn btn-danger btn-sm" (click)="deleteAccount(account.id)">Delete</button></div>
+	</div>
+</div>
