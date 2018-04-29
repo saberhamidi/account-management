@@ -3,13 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-edit-account',
-  templateUrl: './edit-account.component.html',
-  styleUrls: ['./edit-account.component.css']
+  selector: 'app-account-details',
+  templateUrl: './account-details.component.html',
+  styleUrls: ['./account-details.component.css']
 })
-export class EditAccountComponent implements OnInit {
+export class AccountDetailsComponent implements OnInit {
 
-	name:any;
 	account:any;
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
@@ -23,10 +22,7 @@ export class EditAccountComponent implements OnInit {
     });
   }
 
-  updateAccount(){
-    this.http.put('/api/accounts/', this.account, {headers: {"Content-Type":"application/json"}}).subscribe(data => {
-  		this.router.navigate(['/account-details', this.account.id]);
-    });
+  edit(){
+  	this.router.navigate(['/edit-account', this.account.id]);
   }
-
 }

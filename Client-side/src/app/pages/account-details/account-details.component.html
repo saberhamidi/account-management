@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Edit Account</h1>
+  <div class="row">
+    <div class="col-md-6" *ngIf="account">
+        <div class="form-group">
+          <label for="name">First Name: {{account.firstName}}</label>
+        </div>
+        <div class="form-group">
+          <label for="name">Last Name: {{account.lastName}}</label>
+        </div>
+        <div class="form-group">
+          <label for="name">Account Number: {{account.accountNumber}}</label>
+        </div>
+        <div class="form-group">
+			<button type="submit" class="btn btn-info" (click)="edit()">Edit</button>
+      	</div>
+    </div>
+  </div>
+</div>

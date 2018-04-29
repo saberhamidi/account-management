@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AccountsComponent } from './pages/accounts/accounts.component';
 import { EditAccountComponent } from './pages/edit-account/edit-account.component';
 import { AddAccountComponent } from './pages/add-account/add-account.component';
+import { AccountDetailsComponent } from './pages/account-details/account-details.component';
 
 const appRoutes: Routes = [
   {
@@ -26,6 +27,11 @@ const appRoutes: Routes = [
     path: 'add-account',
     component: AddAccountComponent,
     data: { title: 'Create Account' }
+  },
+  {
+    path: 'account-details/:id',
+    component: AccountDetailsComponent,
+    data: { title: 'Account Details' }
   },
   {
     path: 'edit-account/:id',
@@ -45,7 +51,8 @@ const appRoutes: Routes = [
     HomeComponent,
     AccountsComponent,
     EditAccountComponent,
-    AddAccountComponent
+    AddAccountComponent,
+    AccountDetailsComponent
   ],
   imports: [
     BrowserModule,
