@@ -30,8 +30,8 @@ public class AccountEndPoint {
         return acccountService.updateAccount(account);
     }
 
-    @DeleteMapping()
-    @RequestMapping("/{id}")
+    @DeleteMapping("/{id}")
+    //@RequestMapping("/{id}")
     public Account deleteAccount(@PathVariable Long id){
         return acccountService.deleteAccount(id);
     }
