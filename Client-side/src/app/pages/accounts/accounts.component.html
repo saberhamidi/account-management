@@ -8,7 +8,7 @@
 		<div class="col-md-2">{{account.firstName}}</div>
 		<div class="col-md-2">{{account.lastName}}</div>
 		<div class="col-md-2">{{account.accountNumber}}</div>
-		<div class="col-md-2"><button type="button" class="btn btn-info btn-sm">Edit</button></div>
+		<div class="col-md-2"><button type="button" class="btn btn-info btn-sm" (click)="view(account.id)">View</button></div>
 		<div class="col-md-2"><button type="button" class="btn btn-danger btn-sm" (click)="deleteAccount(account.id)">Delete</button></div>
 	</div>
 </div>
