@@ -7,4 +7,6 @@ public interface IService {
     Account getAccount(Long id);
 
     Account createAccount(Account account);
+
+    Account updateAccount(Account account);
 }

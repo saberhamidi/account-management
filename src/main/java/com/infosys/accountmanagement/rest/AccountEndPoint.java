@@ -24,4 +24,9 @@ public class AccountEndPoint {
     public Account createAccount(@RequestBody Account account){
         return acccountService.createAccount(account);
     }
+
+    @PutMapping
+    public Account updateAccount(@RequestBody Account account){
+        return acccountService.updateAccount(account);
+    }
 }
