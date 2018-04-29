@@ -3,10 +3,8 @@ package com.infosys.accountmanagement.rest;
 import com.infosys.accountmanagement.model.Account;
 import com.infosys.accountmanagement.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/accounts", produces = {"application/json"} , consumes = {"application/json"})
@@ -19,5 +17,11 @@ public class AccountEndPoint {
     @RequestMapping("/{id}")
     public Account getAccount(@PathVariable Long id){
         return acccountService.getAccount(id);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Account createAccount(@RequestBody Account account){
+        return acccountService.createAccount(account);
     }
 }

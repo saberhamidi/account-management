@@ -16,4 +16,9 @@ public class AccountService implements IService {
         return  accountRepository.getOne(id);
 
     }
+
+    @Override
+    public Account createAccount(Account account) {
+        return accountRepository.save(account);
+    }
 }
