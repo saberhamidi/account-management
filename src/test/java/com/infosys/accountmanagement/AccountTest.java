@@ -58,4 +58,19 @@ public class AccountTest {
         assertThat(testResultAccount.getId(), is(1l));
         assertThat(testResultAccount.getAccountNumber(), is("33321"));
     }
+
+    @Test
+    public void updateAccountTest(){
+        Account testAccount = new Account();
+        testAccount.setId(1l);
+        testAccount.setAccountNumber("33321");
+        when(accountService.updateAccount(testAccount)).thenReturn(testAccount);
+
+        Account testResultAccount = accountEndPoint.updateAccount(testAccount);
+
+        verify(accountService).updateAccount(testAccount);
+
+        assertThat(testResultAccount.getId(), is(1l));
+        assertThat(testResultAccount.getAccountNumber(), is("33321"));
+    }
 }
