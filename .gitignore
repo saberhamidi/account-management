@@ -2,24 +2,61 @@
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+/Server-side/.apt_generated
+/Server-side/.classpath
+/Server-side/.factorypath
+/Server-side/.project
+/Server-side/.settings
+/Server-side/.springBeans
+/Server-side/.sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+/Server-side/.idea
+/Server-side/*.iws
+/Server-side/*.iml
+/Server-side/*.ipr
 
 ### NetBeans ###
-/nbproject/private/
-/build/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+/Server-side/nbproject/private/
+/Server-side/build/
+/Server-side/nbbuild/
+/Server-side/dist/
+/Server-side/nbdist/
+/Server-side/.nb-gradle/
+
+### dependencies ##
+/Client-side/node_modules
+
+### IDEs and editors ##
+/Client-side/.idea
+/Client-side/.project
+/Client-side/.classpath
+/Client-side/.c9/
+/Client-side/*.launch
+/Client-side/.settings/
+/Client-side/*.sublime-workspace
+
+### IDE - VSCode ###
+/Client-side/.vscode/*
+/Client-side/!.vscode/settings.json
+/Client-side/!.vscode/tasks.json
+/Client-side/!.vscode/launch.json
+/Client-side/!.vscode/extensions.json
+
+### misc ###
+/Client-side/.sass-cache
+/Client-side/connect.lock
+/Client-side/coverage
+/Client-side/libpeerconnection.log
+/Client-side/npm-debug.log
+/Client-side/yarn-error.log
+/Client-side/testem.log
+/Client-side/typings
+
+### e2e ###
+/Client-side/e2e/*.js
+/Client-side/e2e/*.map
+
+### System Files ###
+/Client-side/.DS_Store
+/Client-side/Thumbs.db
