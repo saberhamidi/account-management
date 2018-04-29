@@ -3,11 +3,14 @@ package com.infosys.accountmanagement;
 import com.infosys.accountmanagement.model.Account;
 import com.infosys.accountmanagement.rest.AccountEndPoint;
 import com.infosys.accountmanagement.service.IService;
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
@@ -88,5 +91,22 @@ public class AccountTest {
 
         assertThat(testResultAccount.getId(), is(1l));
         assertThat(testResultAccount.getAccountNumber(), is("33321"));
+    }
+
+    @Test
+    public void getAccountsTest(){
+        List<Account> accounts = new ArrayList<>();
+        Account testAccount = new Account();
+        testAccount.setId(1l);
+        testAccount.setAccountNumber("33321");
+        accounts.add(testAccount);
+        when(accountService.getAccounts()).thenReturn(accounts);
+
+        accounts = accountEndPoint.getAccounts();
+
+        verify(accountService).getAccounts();
+
+        assertThat(accounts.size(), is(1));
+        assertThat(accounts.get(0).getAccountNumber(), is("33321"));
     }
 }

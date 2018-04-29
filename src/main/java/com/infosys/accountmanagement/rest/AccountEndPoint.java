@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/accounts", produces = {"application/json"} , consumes = {"application/json"})
 public class AccountEndPoint {
@@ -34,5 +36,10 @@ public class AccountEndPoint {
     //@RequestMapping("/{id}")
     public Account deleteAccount(@PathVariable Long id){
         return acccountService.deleteAccount(id);
+    }
+
+    @GetMapping
+    public List<Account> getAccounts(){
+        return acccountService.getAccounts();
     }
 }
