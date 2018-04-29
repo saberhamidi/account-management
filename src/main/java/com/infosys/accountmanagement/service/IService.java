@@ -9,4 +9,6 @@ public interface IService {
     Account createAccount(Account account);
 
     Account updateAccount(Account account);
+
+    Account deleteAccount(Long id);
 }

@@ -29,4 +29,10 @@ public class AccountEndPoint {
     public Account updateAccount(@RequestBody Account account){
         return acccountService.updateAccount(account);
     }
+
+    @DeleteMapping("/{id}")
+    //@RequestMapping("/{id}")
+    public Account deleteAccount(@PathVariable Long id){
+        return acccountService.deleteAccount(id);
+    }
 }

@@ -73,4 +73,20 @@ public class AccountTest {
         assertThat(testResultAccount.getId(), is(1l));
         assertThat(testResultAccount.getAccountNumber(), is("33321"));
     }
+
+    @Test
+    public void deleteAccountTest(){
+        Account testAccount = new Account();
+        testAccount.setId(1l);
+        testAccount.setAccountNumber("33321");
+
+        when(accountService.deleteAccount(1l)).thenReturn(testAccount);
+
+        Account testResultAccount = accountEndPoint.deleteAccount(1l);
+
+        verify(accountService).deleteAccount(1l);
+
+        assertThat(testResultAccount.getId(), is(1l));
+        assertThat(testResultAccount.getAccountNumber(), is("33321"));
+    }
 }

@@ -29,4 +29,11 @@ public class AccountService implements IService {
         BeanUtils.copyProperties(account, existingAccount);
         return accountRepository.save(existingAccount);
     }
+
+    @Override
+    public Account deleteAccount(Long id) {
+        Account accountToBeDeleted = accountRepository.getOne(id);
+        accountRepository.delete(accountToBeDeleted);
+        return accountToBeDeleted;
+    }
 }
