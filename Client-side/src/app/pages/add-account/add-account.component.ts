@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-account',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddAccountComponent implements OnInit {
 
-  constructor() { }
+	account={firstName:"",lastName:"",accountNumber:""};
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
+  }
+
+  addAccount(){
+    this.http.post('/api/accounts/', this.account, {headers: {"Content-Type":"application/json"}}).subscribe(data => {
+  		
+  		this.router.navigate(['/account-details', data["id"]]);
+    });
   }
 
 }
