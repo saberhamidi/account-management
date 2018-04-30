@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.Min;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -18,7 +19,7 @@ public class AccountEndPoint {
 
     @GetMapping
     @RequestMapping("/{id}")
-    public Account getAccount(@PathVariable Long id){
+    public Account getAccount(@PathVariable @Min(1) Long id){
         return acccountService.getAccount(id);
     }
 
@@ -35,7 +36,7 @@ public class AccountEndPoint {
 
     @DeleteMapping("/{id}")
     //@RequestMapping("/{id}")
-    public Account deleteAccount(@PathVariable Long id){
+    public Account deleteAccount(@PathVariable @Min(1) Long id){
         return acccountService.deleteAccount(id);
     }
 
